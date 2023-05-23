@@ -26,7 +26,7 @@ function draw()
 
 ## 1.2 Image
 
-<img src="https://raw.githubusercontent.com/LSY3375/2023-ComputerGraphics/main/%5B%EA%B0%9C%EC%9D%B8%EA%B3%BC%EC%A0%9C%5D/img/rainbow.gif">
+<img src="https://raw.githubusercontent.com/LSY3375/2023-ComputerGraphic/main/개인과제/img/rainbow.gif">
 
 
 # **2. Eye Class**
@@ -87,7 +87,7 @@ class Eye
 
 ## 2.2 Image
 
-<img src="https://raw.githubusercontent.com/LSY3375/2023-ComputerGraphics/main/%5B%EA%B0%9C%EC%9D%B8%EA%B3%BC%EC%A0%9C%5D/img/eye.gif">
+<img src="https://raw.githubusercontent.com/LSY3375/2023-ComputerGraphic/main/개인과제/img/eye.gif">
 
 
 # **3. 소감**
