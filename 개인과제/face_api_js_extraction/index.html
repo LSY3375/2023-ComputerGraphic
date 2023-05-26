@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="face-api.js"></script>   <!-- face-api.js 파일 불러오기 -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>    <!-- jQuery 라이브러리를 불러오기 -->
+  <style>
+    #output {
+      width: 900px;
+    }
+
+    .face-canvas {
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .image-container {
+      display: flex;
+      flex-direction: column;   <!-- face-api.js 파일 불러오기 -->
+    }
+  </style>  <!-- 디자인 -->
+</head>
+<body>
+  <div>
+    <input type="file" accept="image/*" onchange="loadImage(event)"><br>    <!-- 이미지를 선택하고 loadImage 함수를 호출 -->
+    <div class="image-container">
+      <img id="output">    <!-- 이미지를 표시 -->
+      <div id="facesContainer"></div>    <!-- 추출한 얼굴 이미지를 표시할 컨테이너 -->
+    </div>
+  </div>
+
+  <script>
+    async function initializeFaceAPI() {
+      await Promise.all([
+        faceapi.nets.ssdMobilenetv1.loadFromUri('models'),
+        faceapi.nets.faceLandmark68Net.loadFromUri('models'),
+      ]);
+    }    // face-api.js 모델 로드
+
+    async function loadImage(event) {
+      const image = document.getElementById('output');    // img 요소 가져오기
+      image.src = URL.createObjectURL(event.target.files[0]);    //선택한 이미지 파일의 URL을 img 요소의 소스로 설정
+      image.onload = async function() {
+        await detectFaces(image);    // 이미지 로드 후 detectFaces 함수 호출
+      };
+    }
+
+    async function detectFaces(image) {
+      await initializeFaceAPI();    // 먼저 face-api.js모델 로드
+
+      const container = document.getElementById('facesContainer');    // 얼굴 이미지를 표시할 컨테이너 요소 가져오기
+      container.innerHTML = '';    // 컨테이너 초기화
+
+      const detections = await faceapi.detectAllFaces(image).withFaceLandmarks();    // face-api.js를 사용하여 이미지에서 얼굴을 검출하고 랜드마크를 추출
+      const faceCanvases = detections.map(detection => {
+        const { x, y, width, height } = detection.detection.box;    // 얼굴 검출 결과에서 얼굴의 위치와 크기 가져오기
+        const faceCanvas = faceapi.createCanvasFromMedia(image);    // face-api.js를 사용하여 얼굴 영역을 표시할 캔버스를 생성
+        const ctx = faceCanvas.getContext('2d');
+
+        faceCanvas.width = 200;    // 얼굴 캔버스 너비
+        faceCanvas.height = 200;    // 얼굴 캔버스 높이
+        ctx.drawImage(image, x, y, width, height, 0, 0, faceCanvas.width, faceCanvas.height);    //얼굴 영역을 캔버스에 그리기
+        container.appendChild(faceCanvas);    //얼굴 캔버스를 컨테이너에 추가
+        return faceCanvas;
+      });
+    }
+  </script>
+</body>
+</html>
