@@ -166,7 +166,7 @@ d) 와 같이 게임 난이도를 조절하는 기능으로 위 사진과 같이
 ##### d ) 코드 확장 단계 
   * 장애물을 추가 구현한 결과물 
   
-  * d ) 의 확장 버전 코드 : [링크](https://github.com/wjh2335/2023-ComputerGraphics/blob/main/%5B%ED%8C%80%EA%B3%BC%EC%A0%9C-3%5D/snake6.js)
+  * d ) 의 확장 버전 코드 : [링크](https://github.com/LSY3375/2023-ComputerGraphic/blob/main/%5B팀과제-3%5D/snake6.js)
 
 <br/>
 ![18](/img/18.png)
@@ -174,7 +174,7 @@ d) 와 같이 게임 난이도를 조절하는 기능으로 위 사진과 같이
 
 
 
-## 4. 코드 💻 [링크](https://github.com/wjh2335/2023-ComputerGraphics/blob/main/%5B%ED%8C%80%EA%B3%BC%EC%A0%9C-3%5D/snake4.js)
+## 4. 코드 💻 [링크](https://github.com/LSY3375/2023-ComputerGraphic/blob/main/%5B팀과제-3%5D/snake4.js)
 
 ```js
 let s;
