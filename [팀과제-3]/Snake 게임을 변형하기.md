@@ -169,7 +169,9 @@ d) 와 같이 게임 난이도를 조절하는 기능으로 위 사진과 같이
   * d ) 의 확장 버전 코드 : [링크](https://github.com/LSY3375/2023-ComputerGraphic/blob/main/%5B팀과제-3%5D/snake6.js)
 
 <br/>
+
 ![18](/img/18.png)
+
 <br/>
 
 
