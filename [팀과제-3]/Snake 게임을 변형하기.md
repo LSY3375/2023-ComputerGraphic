@@ -24,7 +24,7 @@
   *  게임 종료 화면에서 스페이스 바를 누르면 재시작 되게 하기
 
 
-## 2.3. 디자인 변경 ([팀과제-1](https://github.com/wjh2335/2023-ComputerGraphics/blob/main/%5B%ED%8C%80%EA%B3%BC%EC%A0%9C-1%5D/%ED%8C%80%20%EC%BA%90%EB%A6%AD%ED%84%B0%20%EB%A7%8C%EB%93%A4%EA%B8%B0.md))
+## 2.3. 디자인 변경 ([팀과제-1](https://github.com/LSY3375/2023-ComputerGraphic/blob/main/%5B팀과제-1%5D/캐릭터%20만들기.md))
 
   * [팀과제-1]에서 제작한 토끼 캐릭터를 바탕으로 뱀 게임을 수정한다.
   * 배경, 먹이, 토끼 등 그래픽을 이미지로 변경한다.
